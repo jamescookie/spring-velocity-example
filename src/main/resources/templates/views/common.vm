@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script>
+        var isPartyTime = $isPartyTime;
+    </script>
+</head>
+
+<body>
+    #parse("views/nav/${page}Nav.vm")
+    #parse("views/${page}.vm")
+    <script src="prod.min.js"></script>
+</body>
+</html>
