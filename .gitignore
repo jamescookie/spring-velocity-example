@@ -15,4 +15,10 @@ hs_err_pid*
 
 .DS_Store
 .gradle
+build
 
+src/main/web/node_modules
+src/main/web/.sass-cache
+src/main/web/build
+src/main/web/css
+src/main/web/js/*.min.js

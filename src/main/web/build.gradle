@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.moowork.gradle:gradle-grunt-plugin:0.6'
+        classpath 'org.codehaus.groovy:groovy-backports-compat23:2.3.5'
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'com.moowork.grunt'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+grunt_common.dependsOn npmInstall
+
+task defineOutput(dependsOn: grunt_common) {
+    outputs.file file('js/prod.min.js')
+    outputs.files { project.fileTree(dir: 'css', includes: ['*.css']) }
+}
+
+defaultTasks 'defineOutput'

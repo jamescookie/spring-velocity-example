@@ -1,0 +1,2 @@
+rootProject.name = 'spring-velocity-example'
+include 'src:main:web'

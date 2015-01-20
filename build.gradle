@@ -15,6 +15,9 @@ apply plugin: 'spring-boot'
 jar {
     baseName = 'gs-spring-boot'
     version = '0.1.0'
+    into('static') {
+        from tasks.getByPath('src:main:web:defineOutput').outputs.files
+    }
 }
 
 repositories {
@@ -40,4 +43,12 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
-                                                                                                            
+
+idea {
+    module {
+        excludeDirs += file('src/main/web/.sass-cache')
+        excludeDirs += file('src/main/web/build')
+        excludeDirs += file('src/main/web/css')
+        excludeDirs += file('src/main/web/node_modules')
+    }
+}
