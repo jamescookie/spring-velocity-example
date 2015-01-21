@@ -65,7 +65,7 @@ module.exports = function(grunt) {
                 'debug-brk': grunt.option('testDebug'),
                 'grep': grunt.option('specPattern')
             },
-            all: ['js/test/*.js']
+            all: ['js/test/spec/*.js']
         },
 
     });
